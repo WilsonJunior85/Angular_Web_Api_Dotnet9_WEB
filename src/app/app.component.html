@@ -1,12 +1,16 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light navbar-gradient-gray">
     <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="favicon.ico" alt="Logo" height="100">
+        </a>
         <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav me-auto">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                 </li>
@@ -28,6 +32,13 @@
                     </ul>
                 </li>
             </ul>
+
+            <!-- Botão deslogar alinhado à direita -->
+            <div class="d-flex ms-auto">
+                <button class="btn btn-primary shadow-sm">
+                    <i class="bi bi-house-check"></i> Deslogar
+                </button>
+            </div>
         </div>
     </div>
 </nav>

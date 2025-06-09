@@ -25,4 +25,9 @@ export class UsuarioService {
   }
 
 
+  RemoverUsuarios(id: number): Observable<ResultViewModel<UsuarioModel>> {
+    return this.http.delete<ResultViewModel<UsuarioModel>>(`${this.ApiUrl}/Usuario/${id}`);
+  }
+
+
 }
