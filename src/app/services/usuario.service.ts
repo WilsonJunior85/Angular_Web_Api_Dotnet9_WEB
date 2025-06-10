@@ -29,5 +29,7 @@ export class UsuarioService {
     return this.http.delete<ResultViewModel<UsuarioModel>>(`${this.ApiUrl}/Usuario/${id}`);
   }
 
-
+  BuscarUsuarioPorId(id: number): Observable<ResultViewModel<UsuarioModel>> {
+    return this.http.get<ResultViewModel<UsuarioModel>>(`${this.ApiUrl}/Usuario/${id}`);
+  }
 }

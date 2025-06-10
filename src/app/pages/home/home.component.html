@@ -8,11 +8,11 @@
 
     <!-- Botoes de auditoría e cadastrar usuários -->
     <div class="d-flex  justify-content-center gap-3 mt-4 mb-4">
-        <button class="btn btn-primary w-50 shadow-sm">
+        <button class="btn btn-primary w-50 shadow-sm" (click)="BuscarAuditorias()">
             <i class="bi bi-file-text-fill"></i> Auditorias
         </button>
 
-        <button class="btn btn-secondary w-50 shadow-sm">
+        <button class="btn btn-secondary w-50 shadow-sm" [routerLink]="['/cadastro']">
             <i class="bi bi-person-fill-add"></i> Cadastrar Usuário
         </button>
 
@@ -49,10 +49,10 @@
                     <td>{{usuario.email}}</td>
 
                     <td class="d-flex justify-content-center gap-2">
-                        <button class="btn btn-secondary btn-sm">
+                        <button class="btn btn-secondary btn-sm" [routerLink]="['/editar', usuario.id]">
                             <i class="bi bi-pencil-square"></i> Editar
                         </button>
-                        <button class="btn btn-primary btn-sm">
+                        <button class="btn btn-primary btn-sm" [routerLink]="['/detalhes', usuario.id]">
                             <i class="bi bi-file-earmark-text"></i> Detlahes
                         </button>
                         <button class="btn btn-danger btn-sm" (click)="RemoverUsuarios(usuario.id)">
