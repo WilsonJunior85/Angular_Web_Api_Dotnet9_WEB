@@ -18,14 +18,24 @@
 
     </div>
 
-    <div class="mb-4">
+    <!-- <div class="mb-4">
         <label class="form-label fw-bold"><i class="bi-search"></i> Pesquisar por Nome:</label>
         <input class="form-control shadow-sm" type="text" placeholder="Digite o nome do usuário..."
             (input)="Pesquisar($event)" />
+    </div> -->
+    <div class="input-group gap-2 ">
+        <button class="btn btn-outline-primary shadow-sm" (click)="Pesquisar()">
+            <i class="bi bi-search"></i> Pesquisar
+        </button>
+
+        <input class="form-control shadow-sm" type="text" [(ngModel)]="nomePesquisa"
+            placeholder="Digite o nome do usuário..." />
+
     </div>
 
 
-    <div class="table-responsive shadow ">
+
+    <div class="table-responsive shadow mt-3">
         <table class="table table-hover table-bordered text-center">
             <thead class="table-secondary">
                 <tr>

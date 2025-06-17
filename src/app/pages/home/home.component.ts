@@ -5,11 +5,12 @@ import { ToastrService } from 'ngx-toastr';
 import { AuditoriaService } from '../../services/auditoria.service';
 import * as XLSX from 'xlsx';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
   selector: 'app-home',
-  imports: [RouterModule],
+  imports: [RouterModule, FormsModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -18,6 +19,9 @@ export class HomeComponent implements OnInit {
   usuarios: UsuarioModel[] = [];
   usuariosGeral: UsuarioModel[] = [];
   form: any;
+
+
+  nomePesquisa: string = '';
 
 
   constructor
@@ -55,14 +59,27 @@ export class HomeComponent implements OnInit {
   }
 
 
-  Pesquisar(event: Event) {
-    const target = event.target as HTMLInputElement;
-    const value = target.value.toLowerCase();
+  // Pesquisar(event: Event) {
+  //   const target = event.target as HTMLInputElement;
+  //   const value = target.value.toLowerCase();
+
+  //   this.usuarios = this.usuariosGeral.filter(usuario => {
+  //     return usuario.nome.toLowerCase().includes(value);
+  //   })
+  // }
+  Pesquisar() {
+    const valor = this.nomePesquisa.toLowerCase().trim();
+
+    if (!valor) {
+      this.usuarios = this.usuariosGeral;  // Se não tiver valor e clicar no botão, ele vai listar tudo
+      return;
+    }
 
     this.usuarios = this.usuariosGeral.filter(usuario => {
-      return usuario.nome.toLowerCase().includes(value);
-    })
+      return usuario.nome.toLowerCase().includes(valor);
+    });
   }
+
 
 
 
