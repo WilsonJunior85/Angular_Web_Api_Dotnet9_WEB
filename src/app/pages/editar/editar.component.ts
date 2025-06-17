@@ -43,10 +43,10 @@ export class EditarComponent implements OnInit {
     // debugger;
     this.usuarioService.EditarUsuario(usuario).subscribe(result => {
       if (result.data != null) {
-        this.toastr.success(result.mensagem, 'Sucesso');
+        this.toastr.success(result.mensagem, `Usuário ${this.usuario.nome} editado com sucesso`);
         this.router.navigate(['/']);
       } else {
-        this.toastr.success(result.mensagem, 'Erro!');
+        this.toastr.error(result.mensagem, 'Erro!');
       }
     })
   }

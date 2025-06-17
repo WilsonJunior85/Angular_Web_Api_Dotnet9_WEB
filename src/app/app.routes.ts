@@ -4,11 +4,12 @@ import { DetalhesComponent } from './pages/detalhes/detalhes.component';
 import { CadastrarComponent } from './pages/cadastrar/cadastrar.component';
 import { EditarComponent } from './pages/editar/editar.component';
 import { LoginComponent } from './pages/login/login.component';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
-    { path: '', component: HomeComponent },
-    { path: 'detalhes/:id', component: DetalhesComponent },
+    { path: '', component: HomeComponent, canActivate: [authGuard] },
+    { path: 'detalhes/:id', component: DetalhesComponent, canActivate: [authGuard] },
     { path: 'cadastro', component: CadastrarComponent },
-    { path: 'editar/:id', component: EditarComponent },
+    { path: 'editar/:id', component: EditarComponent, canActivate: [authGuard] },
     { path: 'login', component: LoginComponent },
 ];

@@ -58,7 +58,7 @@
         <div *ngIf="btnAcao ==='Cadastrar'">
             <div class="mt-3">
                 <label class="form-label fw-bold"><i class="bi bi-lock"></i> Senha</label>
-                <input type="text" class="form-control shadow-sm" formControlName="senha"
+                <input type="password" class="form-control shadow-sm" formControlName="senha"
                     [ngClass]="{'is-invalid': usuarioForm.get('senha')?.invalid && usuarioForm.get('senha')?.touched}"
                     placeholder="Insira a senha">
 
@@ -70,7 +70,7 @@
 
             <div class="mt-3">
                 <label class="form-label fw-bold"><i class="bi bi-lock-fill"></i> Confirmar Senha</label>
-                <input type="text" class="form-control shadow-sm" formControlName="confirmaSenha"
+                <input type="password" class="form-control shadow-sm" formControlName="confirmaSenha"
                     [ngClass]="{'is-invalid': usuarioForm.get('confirmaSenha')?.invalid && usuarioForm.get('confirmaSenha')?.touched}"
                     placeholder="Confirme a senha">
 

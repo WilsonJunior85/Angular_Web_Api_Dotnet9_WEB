@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light navbar-gradient-gray">
+<nav class="navbar navbar-expand-lg navbar-light navbar-gradient-gray" *ngIf="isAuth()">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
             <img src="favicon.ico" alt="Logo" height="100">
@@ -35,7 +35,7 @@
 
             <!-- Botão deslogar alinhado à direita -->
             <div class="d-flex ms-auto">
-                <button class="btn btn-primary shadow-sm">
+                <button class="btn btn-primary shadow-sm" (click)="Sair()">
                     <i class="bi bi-house-check"></i> Deslogar
                 </button>
             </div>
